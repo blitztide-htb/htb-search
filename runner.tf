@@ -84,9 +84,9 @@ resource "aws_instance" "htb-search" {
         content : file("styles.css")
       },
       {
-        path : "/var/cache/dump.rdb"
+        path : "/var/cache/redis/dump.rdb"
         encoding: "base64"
-        owner: "redis:www-data"
+        owner: "redis:redis"
         content : filebase64("dump.rdb")
       }
   ] })
